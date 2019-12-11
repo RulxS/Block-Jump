@@ -1,3 +1,5 @@
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
 <main class="text-center">
   <form class="form-signin" method="post" action="login">
     <h1 class="signin">Sign in</h1>
@@ -11,11 +13,6 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
   </form>
   </main>
-
-  {{#if success}}
-<p>Successfully created an account. Please log in</p>
-{{/if}}
-
 {{#if errorMessage}}
-<p>{{errorMessage}}</p>
+<p>{{errorMessage}} incorrect password</p>
 {{/if}}

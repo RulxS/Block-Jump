@@ -15,13 +15,25 @@ var bcrypt = require('bcryptjs');
 
 router.get('/home', loggedIn, function(req, res, next) {
   //res.send('respond with a resource');
-  res.render('home'); //display user.hbs
+  res.render('home'); 
+});
+
+router.get('/howtoplay', loggedIn, function(req, res, next) {
+  //res.send('respond with a resource');
+  res.render('howtoplay'); 
+});
+
+router.get('/game', loggedIn, function(req, res, next) {
+  //res.send('respond with a resource');
+  res.render('game'); 
 });
 
 router.get('/logout', function(req, res){
   req.logout(); //passport provide it
   res.redirect('../'); // Successful. redirect to localhost:3000/users
 });
+
+
 
 function loggedIn(req, res, next) {
   if (req.user) {
@@ -38,15 +50,11 @@ function notLoggedIn(req, res, next) {
     res.redirect('/users/home');
   }
 }
-router.get('/login', notLoggedIn, function(req, res, next) {
-  //res.send('respond with a resource');
-  res.render('login'); //display user.hbs
-});
 
 router.get('/login', function(req, res){
     //success is set true in sign up page
     //req.flash('error') is mapped to 'message' from passport middleware
-    res.render('login', {success:req.query.success, errorMessage: req.flash('error')});
+    res.render('login', {errorMessage: req.flash('error')});
 });
 
 router.post('/login',
@@ -73,7 +81,7 @@ function createUser(req, res, next){
   var salt = bcrypt.genSaltSync(10);
   var pwd = bcrypt.hashSync(req.body.password, salt);
 
-  client.query('INSERT INTO users (username, password) VALUES($1, $2)', [req.body.username, pwd], function(err, result) {
+  client.query('INSERT INTO gameusers (username, password) VALUES($1, $2)', [req.body.username, pwd], function(err, result) {
     if (err) {
       console.log("unable to query INSERT");
       return next(err); // throw error to error.hbs.
@@ -89,7 +97,7 @@ router.post('/signup', function(req, res, next) {
     return res.render('signup');
   }
 
-  client.query('SELECT * FROM users WHERE username=$1',[req.body.username], function(err,result){
+  client.query('SELECT * FROM gameusers WHERE username=$1',[req.body.username], function(err,result){
     if (err) {
       console.log("sql error ");
       next(err); // throw error to error.hbs.

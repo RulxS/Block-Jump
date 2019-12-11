@@ -10,7 +10,7 @@ var obstacles = [];
 
 function setup()
 {
-  createCanvas(1300,600);
+  createCanvas(1450,600);
 
   textAlign(CENTER);
 

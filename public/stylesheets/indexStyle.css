@@ -14,7 +14,7 @@ ul{
 li{
     margin: 15px;
 }
-a{
+li a{
     display: block;
     color: black;
     background-color: rgb(224, 182, 66);

@@ -31,7 +31,7 @@ passport.use(new LocalStrategy({
     passwordField: 'password'
   },
   function(username, password, done) {
-    client.query('SELECT * FROM users WHERE username = $1', [username], function(err, result) {
+    client.query('SELECT * FROM gameusers WHERE username = $1', [username], function(err, result) {
       if (err) {
         console.log("SQL error");
         //next(err);
