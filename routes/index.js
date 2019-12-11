@@ -9,9 +9,7 @@ const client = new Client({
 client.connect(); //connect to database
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
-});
+
 
 router.get('/howtoplay', function(req, res, next) {
   res.render('howtoplay');

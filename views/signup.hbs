@@ -1,18 +1,23 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <main class="text-center">
-  <form class="form-signin" method="post" action="signup">
-    <h1 class="signin">Sign up</h1>
-    <input class="form-control" type="text" name="username" placeholder="User name" required autofocus>
-    <input class="form-control" type="password" name="password" placeholder="Password" required>
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-  </form>
-  </main>
+    <form class="form-signin" method="post" action="signup">
+        <h1 class="signin">Sign up</h1>
+        <input class="form-control" type="text" name="username" placeholder="User name" required autofocus>
+        <input class="form-control" type="password" name="password" placeholder="Password" required>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+    </form>
+</main>
+
+
+<ul>
+    <li><a href="javascript:history.back()">Go Back</a></li>
+</ul>
 {{#if errorMessage}}
 <p>Username already exists</p>
 {{/if}}

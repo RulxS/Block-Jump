@@ -13,6 +13,10 @@ var bcrypt = require('bcryptjs');
 
 /* GET users listing. */
 
+router.get('/', loggedIn, function(req, res, next) {
+  //res.send('respond with a resource');
+  res.render('home'); 
+});
 router.get('/home', loggedIn, function(req, res, next) {
   //res.send('respond with a resource');
   res.render('home'); 

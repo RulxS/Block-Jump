@@ -78,7 +78,7 @@ function updateObstacles()
         textSize(40);
         text("GAME OVER", width / 2, height / 2);
         textSize(20);
-        text("press f5 to restart",  width / 2, height / 2 + 40);
+        text("Refresh page to restart",  width / 2, height / 2 + 40);
         noLoop();
       }
     }
